@@ -94,7 +94,7 @@ namespace Illuminate\Support {
         * @return array
         * @generated
         */
-        public static function dot(iterable $array, string $prepend = '', int $depth): array;
+        public static function dot(iterable $array, string $prepend = '', int $depth = null): array;
         /**
         * Convert a flatten "dot" notation array into an expanded array.
         *
@@ -174,7 +174,7 @@ namespace Illuminate\Support {
         * @return array
         * @generated
         */
-        public static function flatten(iterable $array, int $depth): array;
+        public static function flatten(iterable $array, int $depth = null): array;
         /**
         * Get a float item from an array using "dot" notation.
         *
@@ -507,7 +507,7 @@ namespace Illuminate\Support {
         * @return array<TKey, TValue>
         * @generated
         */
-        public static function sortRecursive<TKey extends mixed, TValue>(array<TKey, TValue> $array, mixed $options, \SortDirection|bool $descending = false): array<TKey, TValue>;
+        public static function sortRecursive<TKey extends mixed, TValue>(array<TKey, TValue> $array, mixed $options = null, \SortDirection|bool $descending = false): array<TKey, TValue>;
         /**
         * Recursively sort an array by keys and values in descending order.
         *
@@ -518,7 +518,7 @@ namespace Illuminate\Support {
         * @return array<TKey, TValue>
         * @generated
         */
-        public static function sortRecursiveDesc<TKey extends mixed, TValue>(array<TKey, TValue> $array, mixed $options): array<TKey, TValue>;
+        public static function sortRecursiveDesc<TKey extends mixed, TValue>(array<TKey, TValue> $array, mixed $options = null): array<TKey, TValue>;
         /**
         * Get a string item from an array using "dot" notation.
         *
@@ -841,7 +841,7 @@ namespace Illuminate\Support {
         * @return static<int, mixed>
         * @generated
         */
-        public function flatten(int $depth): static<int, mixed>;
+        public function flatten(int $depth = null): static<int, mixed>;
         /**
         * Flip the items in the collection.
         *
@@ -1182,12 +1182,14 @@ namespace Illuminate\Support {
         /**
         * Put an item in the collection by key.
         *
+        * @template TPutValue
         * @param TKey $key
-        * @param TValue $value
+        * @param TPutValue $value
         * @return static
+        * @phpstan-this-out static<TKey, TValue|TPutValue>
         * @generated
         */
-        public function put(TKey $key, TValue $value): static;
+        public function put<TPutValue>(TKey $key, TPutValue $value): static;
         /**
         * Get one or a specified number of items randomly from the collection.
         *
@@ -1390,7 +1392,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function sortDesc(mixed $options): static;
+        public function sortDesc(mixed $options = null): static;
         /**
         * Sort the collection using the given callback.
         *
@@ -1400,7 +1402,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function sortBy(array<mixed, callable|string|array>|callable|string|int $callback, mixed $options, \SortDirection|bool $descending = false): static;
+        public function sortBy(array<mixed, callable|string|array>|callable|string|int $callback, mixed $options = null, \SortDirection|bool $descending = false): static;
         /**
         * Sort the collection using multiple comparisons.
         *
@@ -1409,7 +1411,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        protected function sortByMany(array<mixed, callable|string|array> $comparisons = [], int $options): static;
+        protected function sortByMany(array<mixed, callable|string|array> $comparisons = [], int $options = null): static;
         /**
         * Sort the collection in descending order using the given callback.
         *
@@ -1418,7 +1420,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function sortByDesc(array<mixed, callable|string|array>|callable|string|int $callback, mixed $options): static;
+        public function sortByDesc(array<mixed, callable|string|array>|callable|string|int $callback, mixed $options = null): static;
         /**
         * Sort the collection keys.
         *
@@ -1427,7 +1429,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function sortKeys(mixed $options, \SortDirection|bool $descending = false): static;
+        public function sortKeys(mixed $options = null, \SortDirection|bool $descending = false): static;
         /**
         * Sort the collection keys in descending order.
         *
@@ -1435,7 +1437,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function sortKeysDesc(mixed $options): static;
+        public function sortKeysDesc(mixed $options = null): static;
         /**
         * Sort the collection keys using a callback.
         *
@@ -1495,7 +1497,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function dot(int $depth): static;
+        public function dot(int $depth = null): static;
         /**
         * Convert a flatten "dot" notation array into an expanded array.
         *
@@ -2085,7 +2087,7 @@ namespace Illuminate\Support {
         * @return static<int, mixed>
         * @generated
         */
-        public function flatten(int $depth): static<int, mixed>;
+        public function flatten(int $depth = null): static<int, mixed>;
         /**
         * Flip the values with their keys.
         *
@@ -2656,7 +2658,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function sortDesc(mixed $options): static;
+        public function sortDesc(mixed $options = null): static;
         /**
         * Sort the collection using the given callback.
         *
@@ -2666,7 +2668,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function sortBy(array<mixed, callable|string|array>|callable|string|int $callback, mixed $options, bool $descending = false): static;
+        public function sortBy(array<mixed, callable|string|array>|callable|string|int $callback, mixed $options = null, bool $descending = false): static;
         /**
         * Sort the collection in descending order using the given callback.
         *
@@ -2675,7 +2677,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function sortByDesc(array<mixed, callable|string|array>|callable|string|int $callback, mixed $options): static;
+        public function sortByDesc(array<mixed, callable|string|array>|callable|string|int $callback, mixed $options = null): static;
         /**
         * Sort the collection keys.
         *
@@ -2684,7 +2686,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function sortKeys(mixed $options, bool $descending = false): static;
+        public function sortKeys(mixed $options = null, bool $descending = false): static;
         /**
         * Sort the collection keys in descending order.
         *
@@ -2692,7 +2694,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function sortKeysDesc(mixed $options): static;
+        public function sortKeysDesc(mixed $options = null): static;
         /**
         * Sort the collection keys using a callback.
         *
@@ -3220,7 +3222,7 @@ namespace Illuminate\Support {
         * @return static<int, mixed>
         * @generated
         */
-        public function flatten(int $depth): static<int, mixed>;
+        public function flatten(int $depth = null): static<int, mixed>;
         /**
         * Flip the items in the collection.
         *
@@ -3642,31 +3644,31 @@ namespace Illuminate\Support {
         *
         * @generated
         */
-        public function sortDesc(mixed $options): mixed;
+        public function sortDesc(mixed $options = null): mixed;
         /**
         * {@inheritDoc}
         *
         * @generated
         */
-        public function sortBy(mixed $callback, mixed $options, mixed $descending = false): mixed;
+        public function sortBy(mixed $callback, mixed $options = null, mixed $descending = false): mixed;
         /**
         * {@inheritDoc}
         *
         * @generated
         */
-        public function sortByDesc(mixed $callback, mixed $options): mixed;
+        public function sortByDesc(mixed $callback, mixed $options = null): mixed;
         /**
         * {@inheritDoc}
         *
         * @generated
         */
-        public function sortKeys(mixed $options, mixed $descending = false): mixed;
+        public function sortKeys(mixed $options = null, mixed $descending = false): mixed;
         /**
         * {@inheritDoc}
         *
         * @generated
         */
-        public function sortKeysDesc(mixed $options): mixed;
+        public function sortKeysDesc(mixed $options = null): mixed;
         /**
         * {@inheritDoc}
         *
@@ -3728,7 +3730,7 @@ namespace Illuminate\Support {
         * @return static
         * @generated
         */
-        public function dot(int $depth): static;
+        public function dot(int $depth = null): static;
         /**
         * {@inheritDoc}
         *
