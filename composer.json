@@ -1,0 +1,51 @@
+{
+    "name": "tyhpdef/illuminate-collections-impl",
+    "description": "Implementation package for tyhpdef/illuminate-collections. Require tyhpdef/illuminate-collections, not this package.",
+    "keywords": [
+        "dev",
+        "static analysis",
+        "internal"
+    ],
+    "type": "library",
+    "license": "Apache-2.0",
+    "version": "13.32.0.0",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "tyhp": {
+            "interopContractVersion": 1,
+            "php-version": ">=8.2",
+            "require": {
+                "tyhpdef/php": "@dev",
+                "tyhpdef/illuminate-conditionable": "@dev",
+                "tyhpdef/illuminate-contracts": "@dev",
+                "tyhpdef/illuminate-macroable": "@dev",
+                "tyhpdef/psr-container": "@dev",
+                "tyhpdef/psr-simple-cache": "@dev"
+            },
+            "package": {
+                "include": [
+                    "./_tyhpdef/*.tyhpdef",
+                    "./_tyhpdef/extensions/*.tyhpdef"
+                ],
+                "overlay": [
+                    "./_tyhpdef/overlays/stubs/*.tyhpdef",
+                    "./_tyhpdef/overlays/*.tyhpdef"
+                ]
+            },
+            "public": "tyhpdef/illuminate-collections"
+        }
+    },
+    "require": {
+        "php": ">=8.2",
+        "illuminate/collections": "13.32.0"
+    },
+    "require-dev": {
+        "tyhpdef/php": "@dev",
+        "tyhpdef/illuminate-conditionable": "@dev",
+        "tyhpdef/illuminate-contracts": "@dev",
+        "tyhpdef/illuminate-macroable": "@dev",
+        "tyhpdef/psr-container": "@dev",
+        "tyhpdef/psr-simple-cache": "@dev"
+    }
+}
